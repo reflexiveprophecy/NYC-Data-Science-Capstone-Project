@@ -1,5 +1,6 @@
 # Git branch workflow and commands
 In order to keep our git repo clean and organized, let’s use **branch** to organize our work. 
+---
 0. Prep work
   * In your local work directory, clone this git.
   `git clone https://github.com/reflexiveprophecy/NYC-Data-Science-Capstone-Project.git`
