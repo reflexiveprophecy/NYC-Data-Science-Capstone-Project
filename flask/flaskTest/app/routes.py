@@ -1,6 +1,7 @@
 from flask import render_template, flash, redirect
 from app import app
 from app.search import searchForm
+from app.spark import initSpark, getRDDResults
 
 # Home page
 
@@ -10,28 +11,28 @@ from app.search import searchForm
 def index():
     # Uncomment the below to show Hello Word
     # return "Hello, World!"
-    user = {'username': 'Panda'}
+    user = {'username': 'Team Panda'}
     posts = [
         {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
+            'author': {'username': 'Test#1'},
+            'body': 'Joker'
         },
         {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
+            'author': {'username': 'Test#2'},
+            'body': 'Why so serious?'
         }
     ]
 
-# Below is the naive approach to render a webpage.
-#     return '''
-# <html>
-#     <head>
-#         <title>NYCDSA-Capstone-AirBnB</title>
-#     </head>
-#     <body>
-#         <h1>Hello, ''' + user['username'] + '''!</h1>
-#     </body>
-# </html>'''
+    # Below is the naive approach to render a webpage.
+    #     return '''
+    # <html>
+    #     <head>
+    #         <title>NYCDSA-Capstone-AirBnB</title>
+    #     </head>
+    #     <body>
+    #         <h1>Hello, ''' + user['username'] + '''!</h1>
+    #     </body>
+    # </html>'''
 
     # Using template to render webpage
     # if True:
@@ -56,4 +57,9 @@ def search():
     return render_template('search.html', title='Search', form=form)
 
 
-# Test page
+# Spark page
+@app.route('/spark', methods=['GET', 'POST'])
+def spark():
+    form1 = initSpark()
+    form2 = getRDDResults()
+    return render_template('spark.html', title='Spark', form = form1)
