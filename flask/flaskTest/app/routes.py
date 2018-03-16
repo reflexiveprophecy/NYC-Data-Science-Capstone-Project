@@ -1,7 +1,9 @@
 from flask import render_template, flash, redirect
-from app import app
+from app.sparkQuery import sparkQuery
+from app import app, sc
 from app.search import searchForm
-from app.spark import initSpark, getRDDResults
+from app.spark import initSpark
+
 
 # Home page
 
@@ -60,6 +62,25 @@ def search():
 # Spark page
 @app.route('/spark', methods=['GET', 'POST'])
 def spark():
-    form1 = initSpark()
-    form2 = getRDDResults()
-    return render_template('spark.html', title='Spark', form = form1)
+    form = initSpark()
+    # form2 = getRDDResults()
+    if form.validate_on_submit():
+        if form.genRDD.data:
+            tempRDD = sparkQuery(sc=sc, upperLimit=form.upperLimRDD.data)
+            flash('Populate Spark: There are {0} data points in the Spark!'.format(
+                tempRDD.dataSet.count()))
+        if form.moreThanTargetRDD:
+            result = tempRDD.moreThan(form.moreTarget.data)
+            flash('There are {0} numbers more than {1}'.format(
+                result, form.moreTarget.data))
+        if form.evenResultRDD:
+            result = tempRDD.getEven()
+            flash('The even numbers are{0}'.format(result))
+        if form.oddResultRDD:
+            result = tempRDD.getOdd()
+            flash('The odd numbers are{0}'.format(result))
+        else:
+            pass
+
+        return redirect('/spark')
+    return render_template('spark.html', title='Spark', form=form)
