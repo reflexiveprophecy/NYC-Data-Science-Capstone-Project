@@ -10,5 +10,17 @@
         </p>
 
         <p>{{ form.genRDD() }}</p>
+
+        <hr>
+        <p>
+            {{ form.moreTarget.label }}<br>
+            {{ form.moreTarget(size=32) }}
+        </p>
+
+        <p>{{ form.moreThanTargetRDD() }}</p>
+
+        <p>{{ form.evenResultRDD() }}</p>
+        <p>{{ form.oddResultRDD() }}</p>
+
     </form1>
 {% endblock %}
