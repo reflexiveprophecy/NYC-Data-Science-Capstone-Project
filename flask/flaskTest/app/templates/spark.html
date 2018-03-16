@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Spark Test</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.upperLimRDD.label }}<br>
+            {{ form.upperLimRDD(size=32) }}
+        </p>
+
+        <p>{{ form.genRDD() }}</p>
+    </form1>
+{% endblock %}

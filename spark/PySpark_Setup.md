@@ -12,7 +12,9 @@
 2. Set local Spark path
     - At the root of your terminal open `.bash_profile` with any text editor.
     - Insert the following two path. Make sure you change `YourName`.
+        
         `export SPARK_HOME=/Users/YourName/anaconda3/lib/python3.6/site-packages/pyspark`
+        
         `export PATH=$SPARK_HOME/bin:$PATH`
 
 3. Integrate with Jupyter Notebook.
