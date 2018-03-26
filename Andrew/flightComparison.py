@@ -101,7 +101,6 @@ def check_csv_flights(source, destination, date):
 	if source == "NYC":
 		source_list = [' New York', " Newark"]
 	else: 
-		print(" Los Angeles" + "="*50)
 		source_list = [' Los Angeles']
 
 	if destination == "NYC":
@@ -137,28 +136,21 @@ def check_csv_flights(source, destination, date):
 # Output:
 #	- "price increased", flight_df1, flight_df2
 #################################################################
-def main_flights(source = "LAX", destination = "NYC", date1 = '06/14/2018', date2 = '06/17/2018', optimize = "ticket price"):
+def main_flights(source = "LAX", destination = "NYC", date1 = '06/14/2018', date2 = '06/17/2018'):
 
 	# Get current flight data
-	print ("Fetching current flight details to go there")
-	flight_df1, best_current_price_1 = parse(source,destination,date1,optimize)
-	print ("Fetching current flight details to return")
-	flight_df2, best_current_price_2 = parse(destination,source,date2,optimize)
+	flight_df1, best_current_price_1 = parse(source,destination,date1,price)
+	flight_df2, best_current_price_2 = parse(destination,source,date2,price)
 
 
 	# Compare to 2 weeks ago flight prices
-	print ("Fetching old flight details to go there")
 	best_old_price_1 = check_csv_flights(source,destination,date1)
-	print ("Fetching old flight details to return")
 	best_old_price_2 = check_csv_flights(destination,source,date2)
 
 
 	# Price comparison
 	current_price = best_current_price_1 + best_current_price_2
 	old_price = best_old_price_1 + best_old_price_2
-
-	print(current_price, "current_price")
-	print(old_price, "old_price")
 
 	difference = current_price - old_price
 
@@ -171,7 +163,7 @@ def main_flights(source = "LAX", destination = "NYC", date1 = '06/14/2018', date
 	else:
 		return 'best_price_decreased', difference, flight_df1, flight_df2
 
-results = main_flights(source = "LAX", destination = "NYC", optimize = "ticket price")
+results = main_flights(source = "LAX", destination = "NYC", date1 = '06/14/2018', date2 = '06/17/2018')
 
 print(results[0])
 print(results[1])
