@@ -12,3 +12,6 @@ __pycache__/
 
 .Rproj.user
 *.RData
+
+# csv
+*.csv
