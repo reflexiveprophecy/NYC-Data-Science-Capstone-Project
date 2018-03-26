@@ -4,7 +4,7 @@ from lxml import html
 from collections import OrderedDict
 import argparse
 
-def parse(source,destination,date):
+def parse(source,destination,date, proxy):
 	for i in range(5):
 		try:
 			url = "https://www.expedia.com/Flights-Search?trip=oneway&leg1=from:{0},to:{1},departure:{2}TANYT&passengers=adults:1,children:0,seniors:0,infantinlap:Y&options=cabinclass%3Aeconomy&mode=search&origref=www.expedia.com".format(source,destination,date)
@@ -14,8 +14,7 @@ def parse(source,destination,date):
 			json_data_xpath = parser.xpath("//script[@id='cachedResultsJson']//text()")
 			raw_json =json.loads(json_data_xpath[0] if json_data_xpath else '')
 			flight_data = json.loads(raw_json["content"])
-
-			flight_info  = OrderedDict() 
+ 
 			lists=[]
 
 			for i in flight_data['legs'].keys():
@@ -83,7 +82,7 @@ def parse(source,destination,date):
 			return sortedlist
 		
 		except ValueError:
-			print ("Rerying...")
+			print ("Retrying...")
 			
 		return {"error":"failed to process the page",}
 
@@ -99,6 +98,6 @@ if __name__=="__main__":
 	date = args.date
 	print ("Fetching flight details")
 	scraped_data = parse(source,destination,date)
-	print ("Writing data to output file")
+	date_string = date.strftime('%m/%d/%Y')
 	with open('%s-%s-flight-results.json'%(source,destination),'w') as fp:
 	 	json.dump(scraped_data,fp,indent = 4)
