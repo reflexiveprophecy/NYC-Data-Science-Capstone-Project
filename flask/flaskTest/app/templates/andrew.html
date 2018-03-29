@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- Banner -->
+        <section id="banner1">
+            <div class="content">
+                <h1>A cute Panda takes you to places</h1>
+                <p>Panda Go! is a smart travel assitant who helps you to plan your trip!</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <ul class="actions">
+                    <li><a href="#one" class="button scrolly">Let's Go!</a></li>
+                </ul>
+            </div>
+        </section>
+
+
+    <!-- One -->
+        <section id="one" class="wrapper style2">
+            <div class="inner">
+                <header class="align-center">
+                    <h1> Who let the Pandas out? </h1>
+                    <p> A 5 seconds tutorial to get a cute Panda help you better.</p>
+                </header>
+                <div class="row">
+                    <div class="6u 12u$(small)">
+                        <header class="align-center">
+                        <h3>   Step 1: Select where you want to go.</h3>
+                        <p>Currently only support NYC.</p>
+                        <h3>Step 2: Answer a few questions.</h3>
+                        <p>A designated Panda will learn your personality.</p>
+                        <h3>Step 3: Review results.</h3>
+                        <p>Your Panda will collect the results and provide the final quote.</p>
+                        </header>
+                    </div>
+                    <div class="6u$ 12u$(small)">
+                        <header class="align-center">
+                            <a href="/questions">
+                            <img border="0" src={{ url_for('static', filename='img/pandaDancing.gif') }} alt="Dancing Panda" width="250" height="250"/>
+                            </a>
+                        </header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="6u 12u$(small)">
+                        <header class="align-center">
+                            <ul class="actions fit small">
+                                <!-- <li><a href="#" class="button special fit small">Fit + Small</a></li> -->
+                                <!-- <li><a href="#" class="button fit small">Fit + Small</a></li> -->
+                                <li><a href="#three" class="button alt fit small scrolly" >Team Behind PandaGo</a></li>
+                            </ul>
+                        </header>
+                    </div>
+                    <div class="6u$ 12u$(small)">
+                        <header class="align-center">
+                            <ul class="actions fit small">
+                                <li><a href="/questions" class="button special fit small">Let the Panda Go!</a></li>
+                                <!-- <li><a href="#" class="button fit small">Fit + Small</a></li> -->
+                                <!-- <li><a href="#" class="button alt fit small">Fit + Small</a></li> -->
+                            </ul>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Two -->
+            <section id="two" class="wrapper style1 special">
+                <div class="inner">
+                    <h2>Exciting Quotes</h2>
+                    <figure>
+                        <blockquote>
+                            "If a Panda scored eveything perfectly in a training camp, but could not serve the customer well, it's called overfitting."
+                        </blockquote>
+                        <footer>
+                            <cite class="author">Aiko L.</cite>
+                            <cite class="company">Guru of Team Panda from NYCDSA</cite>
+                        </footer>
+                    </figure>
+                </div>
+            </section>
+
+    <!-- Three -->
+            <section id="three" class="wrapper">
+                <header class="align-center">
+                    <h2>The Humans Behind PandaGo</h2>
+                    <p> Beside training Pandas, those human also appreciate any work opportunities.</p>
+                </header>
+                
+                <div class="inner flex flex-3">
+                    <div class="flex-item box">
+                        <div class="image fit">
+                            <img src={{ url_for('static', filename='img/andrew.jpg') }} alt="" />
+                        </div>
+                        <div class="content">
+
+                            <h3>Andrew Dodd</h3>
+                            <p>Andrew trained our pandas how to count bamboo to find the best price. </p>
+                        </div>
+                    </div>
+                    <div class="flex-item box">
+                        <div class="image fit">
+                            <img src={{ url_for('static', filename='img/roger.jpg') }} alt="" />
+                        </div>
+                        <div class="content">
+                            <h3>Roger Ren</h3>
+                            <p>Roger just played with all the cute pandas on the website.</p>
+                        </div>
+                    </div>
+                    <div class="flex-item box">
+                        <div class="image fit">
+                            <img src={{ url_for('static', filename='img/wenchang.jpg') }} alt=""/>
+                        </div>
+                        <div class="content">
+                            <h3>Wenchang Qian</h3>
+                            <p>Wenchang taught our pandas how to read minds from a few simple words.</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </section>
+
+        <!-- <h1>Hello, {{ user.username }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %} -->
+{% endblock %}

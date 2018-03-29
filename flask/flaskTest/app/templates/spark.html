@@ -1,26 +1,16 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-    <h1>Spark Test</h1>
-    <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.upperLimRDD.label }}<br>
-            {{ form.upperLimRDD(size=32) }}
-        </p>
-
-        <p>{{ form.genRDD() }}</p>
-
-        <hr>
-        <p>
-            {{ form.moreTarget.label }}<br>
-            {{ form.moreTarget(size=32) }}
-        </p>
-
-        <p>{{ form.moreThanTargetRDD() }}</p>
-
-        <p>{{ form.evenResultRDD() }}</p>
-        <p>{{ form.oddResultRDD() }}</p>
-
-    </form1>
-{% endblock %}
+<section id="one" class="wrapper">
+    <header class="align-center">
+        <h2>Under development</h2>
+        <p> We are still training our pandas to do Spark and Login.</p>
+        <p> They are working very hard.</p>
+        <p>&nbsp;</p>
+        <img src={{ url_for('static', filename='img/pandaworking.gif') }} width="250" height="250"/>
+        <p>&nbsp;</p>
+    </header>
+    
+</section>
+{% endblock %} 

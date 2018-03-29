@@ -1,29 +1,103 @@
+<!DOCTYPE html>
+<!-- 
+
+    推开世界的门，你是站在门外怕迟到的人。
+    -S.
+    
+    . -->
+
 <html>
     <head>
+        <!-- Setup environment -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+        <!-- Set up titles -->
         {% if title %}
-        <title>{{ title }} - NYCDSA - Team Panda Capstone</title>
+        <title>{{ title }} - NYCDSA - PreAlpha</title>
         {% else %}
         <title>Here is the default title! Missing Title!</title>
-        {% endif %}
+        {% endif %}        
+
     </head>
     <body>
-        <div>
-            Website: 
-            <a href="/index">Home</a>
-            <a href="/search">Search</a>
-            <a href="/spark">Spark</a>
-        </div>
-        <hr>
-        <hr>
+        <!-- Header -->
+            <header id="header">
+                <nav class="left">
+                    <a href="#menu"><span>Menu</span></a>
+                </nav>
+                <a href="/index" class="logo">Panda Go!</a>
+                <nav class="right">
+                    <a href="/spark" class="button alt">Log in</a>
+                </nav>
+            </header>
+
+        <!-- Menu -->
+            <nav id="menu">
+                <ul class="links">
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/search">Search</a></li>
+                    <li><a href="/spark">Spark</a></li>
+                    <li><a href="/questions">Questions</a></li>
+                    <li><a href="/results">Result</a></li>
+                    <li><a href="/budget">Budget</a></li>
+                </ul>
+                <ul class="actions vertical">
+                    <li><a href="#" class="button fit">Login</a></li>
+                </ul>
+            </nav>
+
+        <!-- HyperLinks -->
+<!--             <div>
+                Website: 
+                <a href="/index">Home</a>
+                <a href="/search">Search</a>
+                <a href="/spark">Spark</a>
+            </div>
+            <hr>
+            <hr> -->
+
+
+
+
+        <!-- Plugin content -->
         {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         {% endwith %}
-        {% block content %}{% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <h2>Get In Touch with the Panda Go Team</h2>
+                    <ul class="actions">
+                        <!-- <li><span class="icon fa-phone"></span> <a href="#">(000) 000-0000</a></li> -->
+                        <li><span class="icon fa-envelope"></span> <a href="#">pandaneverstop@gmail.com</a></li>
+                        <li><span class="icon fa-map-marker"></span> 905, 500 8th Avenue, New York, NY</li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy; Untitled. Design <a href="https://templated.co">TEMPLATED</a>. Images <a href="https://unsplash.com">Unsplash</a>.
+                </div>
+            </footer>
+
+        <!-- Scripts -->
+            <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
     </body>
 </html>
+
+

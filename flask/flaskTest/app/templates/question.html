@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Head -->
+    <section id="zero" class="wrapper">
+        <header class="align-center">
+            <h1>A cute panda is on the way.</h1>
+            <p> Answer a few questions to get the Panda to know you.</p>
+            <img src={{ url_for('static', filename='img/pandaComing.gif') }} width="250" height="250"/>
+            <ul class="actions">
+                <li><a href="#city" class="button scrolly">Start</a></li>
+            </ul>
+        </header>
+    </section>
+<form role="form" method="post">
+<!-- City -->
+    <section id="city" class="wrapper style2">
+        <header class="align-center">
+            <h2>Where do you want to go?</h2>
+            <p> Select the cities you like to visit (currently only support NYC)</p>
+        </header>
+        <ul class="actions align-center">
+            <li><input type="checkbox" name="att" value='NYC' id="cd11" />
+            <label for="cd11"><img src={{ url_for('static', filename='img/nyc.jpg') }} /></label>
+            <label for="cd11"><p>New York</p></label>
+            </li>
+            <li><input type="checkbox" name="att" value='Miami' id="cb12" />
+            <label for="cb12"><img src={{ url_for('static', filename='img/miami.jpg') }} /></label>
+            <label for="cb12"><p>Miami</p></label>
+            </li>
+            <li><input type="checkbox" name="att" value='Seattle' id="cb13" />
+            <label for="cb13"><img src={{ url_for('static', filename='img/seattle.jpg') }} /></label>
+            <label for="cb13"><p>Seattle</p></label>
+            </li>
+        </ul>
+        <ul class="actions align-center">
+            <li><input type="checkbox" id="cd14" />
+            <label for="cd14"><img src={{ url_for('static', filename='img/lasvegas.jpg') }} /></label>
+            <label for="cd14"><p>Las Vegas</p></label>
+            </li>
+            <li><input type="checkbox" id="cb15" />
+            <label for="cb15"><img src={{ url_for('static', filename='img/sfan.jpg') }} /></label>
+            <label for="cb15"><p>San Fran</p></label>
+            </li>
+            <li><input type="checkbox" id="cb16" />
+            <label for="cb16"><img src={{ url_for('static', filename='img/boston.jpg') }} /></label>
+            <label for="cb16"><p>Boston</p></label>
+            </li>
+        </ul>
+        <ul class="actions align-center">
+            <li><a href="#one" class="button scrolly">Next</a></li>
+        </ul>
+    </section>
+
+<!-- Attractions -->
+    <section id="one" class="wrapper style4">
+        <header class="align-center">
+            <h2>What attracts you the most?</h2>
+            <p> Your panda will auto learn keywords associated the attractions.</p>
+
+            </header>
+
+            <ul class="actions align-center">
+              <li><input type="checkbox" name="attraction" value='Restaurants' id="cb1" />
+                <label for="cb1"><img src={{ url_for('static', filename='img/restaurant.jpg') }} /></label>
+                <label for="cb1"><p>Restaurant</p></label>
+                
+              </li>
+              <li><input type="checkbox" name="attraction" value='Museums' id="cb2" />
+                <label for="cb2"><img src={{ url_for('static', filename='img/museum.jpg') }} /></label>
+                <label for="cb2"><p>Museum</p></label>
+                <!-- <p>Museum</p> -->
+              </li>
+              <li><input type="checkbox" name="attraction" value='Shopping' id="cb3" />
+                <label for="cb3"><img src={{ url_for('static', filename='img/shopping.jpg') }} /></label>
+                <label for="cb3"><p>Shopping</p></label>
+                
+              </li>
+            </ul>
+            <ul class="actions align-center">
+              <li><input type="checkbox" name="attraction" value='Parks' id="cb4" />
+                <label for="cb4"><img src={{ url_for('static', filename='img/park.jpg') }} /></label>
+                <label for="cb4"><p>Park</p></label>
+                
+              </li>
+              <li><input type="checkbox" name="attraction" value='Bars' id="cb5" />
+                <label for="cb5"><img src={{ url_for('static', filename='img/bars.jpg') }} /></label>
+                <label for="cb5"><p>Bar</p></label>
+                
+              </li>
+              <li><input type="checkbox" name="attraction" value='Music' id="cb6" />
+                <label for="cb6"><img src={{ url_for('static', filename='img/music.jpg') }} /></label>
+                <label for="cb6"><p>Music</p></label>
+                
+              </li>
+            </ul>
+            <ul class="actions align-center">
+                <li><a href="#two" class="button scrolly">Next</a></li>
+            </ul>
+        
+    </section>
+
+<!-- Important options -->
+    <section id="two" class="wrapper style5">
+        <header class="align-center">
+            <h2>Are any of these options important to you?</h2>
+            <p> Your panda will do the hard research work for you.</p>
+        </header>
+        <ul class="actions align-center">
+              <li><input type="checkbox" name="attraction" value='Close to Subway' id="cb21" />
+                <label for="cb21"><img src={{ url_for('static', filename='img/subway.jpg') }} /></label>
+                <label for="cb21"><p>Close to subway</p></label>
+                
+              </li>
+              <li><input type="checkbox" name="attraction" value='Bringing my Pet' id="cb22" />
+                <label for="cb22"><img src={{ url_for('static', filename='img/pet.jpg') }} /></label>
+                <label for="cb22"><p>Bring your pet</p></label>
+                
+              </li>
+              <li><input type="checkbox" name="attraction" value='King bed' id="cb23" />
+                <label for="cb23"><img src={{ url_for('static', filename='img/kingbed.jpeg') }} /></label>
+                <label for="cb23"><p>Large bed</p></label>
+                
+              </li>
+        </ul>
+        <ul class="actions align-center">
+              <li><input type="checkbox" name="attraction" value='Kitchen' id="cb24" />
+                <label for="cb24"><img src={{ url_for('static', filename='img/kitchen.jpg') }} /></label>
+                <label for="cb24"><p>Able to cook food</p></label>
+              </li>
+              <li><input type="checkbox" name="attraction" value='Parking' id="cb25" />
+                <label for="cb25"><img src={{ url_for('static', filename='img/parking.jpg') }} /></label>
+                <label for="cb25"><p>Parking avaliable</p></label>
+              </li>
+              <li><input type="checkbox" name="attraction" value='Handicap' id="cb26" />
+                <label for="cb26"><img src={{ url_for('static', filename='img/handicap.jpg') }} /></label>
+                <label for="cb26"><p>Handicap ready</p></label>
+              </li>
+
+        </ul>
+        <ul class="actions align-center">
+            <li><a href="#three" class="button scrolly">Next</a></li>
+        </ul>
+    </section>
+
+<!-- Style -->
+    <section id="three" class="wrapper style6">
+        <header class="align-center">
+            <h2>Pick your preferred style</h2>
+            <p> Never to be deceived by the package picture again.</p>
+        </header>
+        <ul class="actions align-center">
+              <li><input type="checkbox" name="attraction" value='Classic' id="cb31" />
+                <label for="cb31"><img src={{ url_for('static', filename='img/classic.jpg') }} /></label>
+                <label for="cb31"><p>Classic decor</p></label>
+                
+              </li>
+              <li><input type="checkbox" name="attraction" value='Modern' id="cb32" />
+                <label for="cb32"><img src={{ url_for('static', filename='img/modern.jpg') }} /></label>
+                <label for="cb32"><p>Modern decor</p></label>
+                
+              </li>
+              <li><input type="checkbox" id="cb33" />
+                <label for="cb33"><img src={{ url_for('static', filename='img/common.jpg') }} /></label>
+                <label for="cb33"><p>Family decor</p></label>
+                
+              </li>
+        </ul>
+        <ul class="actions align-center">
+            <li><a href="#four" class="button scrolly">Next</a></li>
+        </ul>
+    </section>
+
+<!-- Special -->
+    <section id="four" class="wrapper style7">
+        <header class="align-center">
+            <h2>Need anything special?</h2>
+            <p> You can also input your sepcial needs here.</p>
+            <p> Like: "big tv" or "coffeemaker" </p>
+        </header>
+        <div class="inner">
+            <!-- <p> You can also input your sepcial needs here.</p> -->
+            <textarea name="specialInput" id="message" placeholder='Like: "big tv" or "coffeemaker"' rows="1"></textarea>
+            <p>&nbsp;</p>
+        </div>
+        <ul class="actions align-center">
+            <li><a href="#final" class="button scrolly">Last step...</a></li>
+        </ul>
+    </section>
+
+<!-- Deploy panda -->
+<section id="final" class="wrapper">
+    <header class="align-center">
+        <h2>Your panda is ready.</h2>
+        <p> Your panda is very happy to get to know you.</p>
+        <p>&nbsp;</p>
+        <img src={{ url_for('static', filename='img/pandahappy.gif') }} width="250" height="250"/>
+        <p>&nbsp;</p>
+        <ul class="actions align-center">
+            <button type="submit" name="submit" value="submit" class="button big icon fa-search">Panda GoGoGo!</button>
+            <!-- <button type="submit" name="submit" value="submit">Submit</button> -->
+            <!-- <li><a href="results" class="button big icon fa-search">Panda GoGoGo!</a></li> -->
+        </ul>
+        <p>&nbsp;</p>
+    </header>
+
+</form>    
+
+ 
+{% endblock %}

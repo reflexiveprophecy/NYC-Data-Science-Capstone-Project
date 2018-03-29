@@ -1,27 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Search</h1>
-    <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.originCity.label }}<br>
-            {{ form.originCity(size=32) }}
-        </p>
-        <p>
-            {{ form.destiCity.label }}<br>
-            {{ form.destiCity(size=32) }}
-        </p>
-        <p>
-            {{ form.startDate.label }}<br>
-            {{ form.startDate(size=32) }}
-        </p>
-        <p>
-            {{ form.endDate.label }}<br>
-            {{ form.endDate(size=32) }}
-        </p>
+<section id="one" class="wrapper">
+    <header class="align-center">
+            <h2>Search</h2>
+            <p> A Panda is ready to learn your perenference and make recommendations.</p>
+    </header>
+    <div class="inner">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.originCity.label }}<br>
+                {{ form.originCity(size=32) }}
+            </p>
+            <p>
+                {{ form.destiCity.label }}<br>
+                {{ form.destiCity(size=32) }}
+            </p>
+            <p>
+                {{ form.startDate.label }}<br>
+                {{ form.startDate(size=32) }}
+            </p>
+            <p>
+                {{ form.endDate.label }}<br>
+                {{ form.endDate(size=32) }}
+            </p>
 
-        <p>{{ form.felxibleDates() }} {{ form.felxibleDates.label }}</p>
-        <p>{{ form.search() }}</p>
-    </form>
+            <p>{{ form.felxibleDates() }} {{ form.felxibleDates.label }}</p>
+            <p>{{ form.search() }}</p>
+        </form>
+    <div>
+</section>
 {% endblock %}

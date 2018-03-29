@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<section id="one" class="wrapper">
+    <header class="align-center">
+        <h2>Result in the raw format</h2>
+        <p> Our pandas are still practicing public speaking.</p>
+        <p> They are working very hard.</p>
+        <p>&nbsp;</p>
+        <img src={{ url_for('static', filename='img/pandaworking.gif') }} width="250" height="250"/>
+        <p>&nbsp;</p>
+    </header>
+
+    {% for table in tables %}
+    <h2>{{titles[loop.index]}}</h2>
+    {{ table|safe }}
+    {% endfor %}
+    <ul class="actions big align-center">
+        <li><a href="/budget" class="button big icon fa-search">Show my budget!</a></li>
+        <!-- <li><a href="#" class="button fit small">Fit + Small</a></li> -->
+        <!-- <li><a href="#" class="button alt fit small">Fit + Small</a></li> -->
+    </ul>
+</section>
+
+
+{% endblock %} 
