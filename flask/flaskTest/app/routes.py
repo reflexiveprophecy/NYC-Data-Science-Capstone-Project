@@ -210,3 +210,44 @@ def andrew():
 
     # return loop
     return render_template('andrew.html', title='SpecialTreat', user=user, posts=posts)
+
+#### Old files
+# # Search page
+# @app.route('/search', methods=['GET', 'POST'])
+# def search():
+#     form = searchForm()
+#     if form.validate_on_submit():
+#         flash('User choose to go from {0} to {1} \
+#             \n Start date is {2} and end date is {3} \
+#             \n Flexible with dates? {4}'
+#               .format(form.originCity.data, form.destiCity.data, form.startDate.data, form.endDate.data, form.felxibleDates.data))
+#         return redirect('/search')
+#     return render_template('search.html', title='Search', form=form)
+
+
+# # Spark page
+# @app.route('/spark', methods=['GET', 'POST'])
+# def spark():
+#     form = initSpark()
+#     # form2 = getRDDResults()
+#     if form.validate_on_submit():
+#         if form.genRDD.data:
+#             tempRDD = sparkQuery(sc=sc, upperLimit=form.upperLimRDD.data)
+#             flash('Populate Spark: There are {0} data points in the Spark!'.format(
+#                 tempRDD.dataSet.count()))
+#         if form.moreThanTargetRDD:
+#             result = tempRDD.moreThan(form.moreTarget.data)
+#             flash('There are {0} numbers more than {1}'.format(
+#                 result, form.moreTarget.data))
+#         if form.evenResultRDD:
+#             result = tempRDD.getEven()
+#             flash('The even numbers are{0}'.format(result))
+#         if form.oddResultRDD:
+#             result = tempRDD.getOdd()
+#             flash('The odd numbers are{0}'.format(result))
+#         else:
+#             pass
+
+#         return redirect('/spark')
+#     return render_template('spark.html', title='Spark', form=form)
+# >>>>>>> 141bab50347091c97fd5a873a8a6266f5c7501fa
